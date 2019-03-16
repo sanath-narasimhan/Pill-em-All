@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+  {% block content %}
+  
+  <h1 align="center" style="color:black"> CSE5334 Data Mining Term Project </h1>
+  <p align="center"><a href="search" > Click Here!! </a></p>
+  <pre> Report:
+       * Used LSI model for  building tf-idf ranked matrix using SVD.<a href="https://radimrehurek.com/gensim/models/lsimodel.html">Source</a>
+	   * Removed non-alphabetic charecters, stop words, converted to lower case and removed partially filled review entries.
+       * Used document to bag of words for vector representation of reviews.
+	   * gensim and nltk are main libraries used for word processinf and feature generation.
+	   * Result consist of top 10 reviews that are closely similar.
+	   * <a href="https://github.com/sanath-narasimhan/Pill-em-All/blob/master/back_end.py">Back end Code</a>
+	   * <a href="https://github.com/sanath-narasimhan/Pill-em-All/blob/master/Reviews_to_tdmatrix.py">Dictionary and review corpus generator Code</a>
+  </pre>	   
+  {% endblock %}
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
