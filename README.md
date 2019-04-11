@@ -24,18 +24,17 @@ on each word to find it's root word. This ends the preprocessing step.
 We use the inverted index technique which is popular in search engines nowadays. It is very fast as we only calculate similarity for
 top few reviews. This is a crucial step, here we traverse through all the preprocessed reviews in our dataset to find unique words in 
 the entire pool. Forthis we use a python __dictionary__ as the use hash indexing which is fast. The **keys** of this dictionary are the 
-words. The **value** consists of a _list_, whose first element is the **document frequency** of that word _(number of reviews the word 
-occurs in)_. The second element of this _list_ is another _dictionay_ where **keys** are **ID's** of reviews in which a word occured, 
+words. The **value** consists of a _list_, whose first element is the **document frequency** of that word _(number of reviews the word occurs in)_.The second element of this _list_ is another _dictionay_ where **keys** are **ID's** of reviews in which a word occured, 
 **values** are a _list_ with the index position(s) of the word within the review. Using this we can now calculate the weights of each word
 in every review to create posting list for all words. For this we use the **tf-idf** [term frequency-Inverted document frequency](https://medium.freecodecamp.org/how-to-process-textual-data-using-tf-idf-in-python-cd2bbc0a94a3) 
 The third element in the _list_ is the posting list for every word. **Prototype:**
- <p>
- { word1 : [ docfreq, { docid1:[pos1, pos2, .....], docid2:[pos1, pos2, ....], ....... }, **{ doc1:w1, doc2:w2, .... }** ]
+<p>
+ { word1 : [ docfreq, { docid1:[pos1, pos2, .....], docid2:[pos1, pos2, ....], ....... }, { doc1:w1, doc2:w2, .... } ]
    .
    . 
    .
   }
-  </p>
+</p>
   
 **Step 3  Query processing and calculating similarity ( InvertedIndex.py lines  62-144 ):**
 
